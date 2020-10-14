@@ -8,6 +8,7 @@ public class ChalkWrite : MonoBehaviour
     public VRTK_InteractableObject linkedObject;
     public GameObject linePrefab;
     public GameObject currentLine;
+    public GameObject tip;
 
     public LineRenderer lineRenderer;
     public List<Vector3> controllerPositions;
@@ -46,8 +47,8 @@ public class ChalkWrite : MonoBehaviour
         currentLine = Instantiate(linePrefab, Vector3.zero, Quaternion.identity);
         lineRenderer = currentLine.GetComponent<LineRenderer>();
         controllerPositions.Clear();
-        controllerPositions.Add(linkedObject.transform.position);
-        controllerPositions.Add(linkedObject.transform.position);
+        controllerPositions.Add(tip.transform.position);
+        controllerPositions.Add(tip.transform.position);
         lineRenderer.SetPosition(0, controllerPositions[0]);
         lineRenderer.SetPosition(1, controllerPositions[1]);
 
@@ -84,7 +85,7 @@ public class ChalkWrite : MonoBehaviour
         if (linkedObject.IsUsing())
         {
             
-            Vector3 tempControllerPosition = linkedObject.transform.position;
+            Vector3 tempControllerPosition = tip.transform.position;
             if (Vector3.Distance(tempControllerPosition, controllerPositions[controllerPositions.Count() - 1]) > .1f)
             {
                 updateLine(tempControllerPosition);

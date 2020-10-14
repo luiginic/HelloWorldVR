@@ -120,7 +120,7 @@ LineRenderer:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    numCornerVertices: 3
+    numCornerVertices: 4
     numCapVertices: 0
     alignment: 0
     textureMode: 0
