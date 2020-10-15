@@ -86,7 +86,7 @@ public class ChalkWrite : MonoBehaviour
         {
             
             Vector3 tempControllerPosition = tip.transform.position;
-            if (Vector3.Distance(tempControllerPosition, controllerPositions[controllerPositions.Count() - 1]) > .1f)
+            if (Vector3.Distance(tempControllerPosition, controllerPositions[controllerPositions.Count() - 1]) > 0.001f)
             {
                 updateLine(tempControllerPosition);
             }
